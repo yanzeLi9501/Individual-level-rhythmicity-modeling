@@ -157,11 +157,6 @@ The model was validated on two external cohorts:
 - **MIMIC-IV**: publicly available ICU database (PhysioNet)
 - **SCH**: independent hospital cohort with RDI (Relative Dose Intensity) workflow analysis
 
-## Citation
-
-If you use this code, please cite our paper:
-
-> Li, Y. et al. Individual-level rhythmicity modeling predicts readmission patterns in cancer patients using historical electronic health records. *npj Digital Medicine* (2025).
 
 ## License
 
