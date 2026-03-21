@@ -41,6 +41,12 @@ ENV/
 # Word documents
 *.docx
 
+# Paper text scripts (not for public repo)
+src/figures/gen_paper_v2.py
+docs/paper_framework_npjDM.md
+docs/METHODS_DOCUMENTATION.md
+_check_result.txt
+
 # OS
 .DS_Store
 Thumbs.db

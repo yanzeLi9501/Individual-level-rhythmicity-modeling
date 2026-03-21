@@ -64,12 +64,13 @@ comor_short = {
 # ═══════════════════════════════════════════════════════════════
 # FIGURE — 1 × 3 layout
 # ═══════════════════════════════════════════════════════════════
-fig = plt.figure(figsize=(14, 7))
-gs = gridspec.GridSpec(1, 2, wspace=0.30,
-                       left=0.06, right=0.97, top=0.90, bottom=0.12)
+fig = plt.figure(figsize=(16, 7))
+gs = gridspec.GridSpec(1, 2, wspace=0.35,
+                       left=0.07, right=0.97, top=0.90, bottom=0.14)
 
 # ─── Panel A: Temporal COVID wave analysis ────────────────────
 ax_a = fig.add_subplot(gs[0])
+ax_a.set_box_aspect(1)
 panel_label(ax_a, 'A')
 
 # Filter to wave-relevant period: May 2022 ~ Sep 2023
@@ -152,6 +153,7 @@ ax_a.set_title('Post-lockdown COVID Wave: Respiratory Surge & Behavioral Similar
 
 # ─── Panel B: Negative control heatmap ───────────────────────
 ax_b = fig.add_subplot(gs[1])
+ax_b.set_box_aspect(1)
 panel_label(ax_b, 'B')
 
 ref_names = ['COVID+ (2022-12)', 'Heart Disease', 'Diabetes', 'General Pop.']
@@ -307,6 +309,6 @@ ax_sb.set_ylim(-0.3, 0.9)
 ax_sb.axhline(0, color='grey', linewidth=0.5, linestyle=':', alpha=0.3)
 ax_sb.axvline(0, color='grey', linewidth=0.5, linestyle=':', alpha=0.3)
 
-save_figure(fig_s, 'FigureS10_postpandemic_extended')
+save_figure(fig_s, 'FigureS6_postpandemic_extended')
 print("  FigureS10_postpandemic_extended saved.")
 print("\nFigure 4 + S10 complete!")

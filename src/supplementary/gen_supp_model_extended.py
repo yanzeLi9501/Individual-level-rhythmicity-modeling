@@ -27,7 +27,7 @@ if sys.stdout.encoding != 'utf-8':
 from fig_config import *
 
 print("=" * 60)
-print("Figure S11: Model Performance Extended Analysis")
+print("Figure S13: Model Performance Extended Analysis")
 print("=" * 60)
 
 # ── Load data ──
@@ -307,7 +307,7 @@ ax.set_xlabel('Feature Importance (Gain)')
 ax.set_title('Top 20 Features — LOS')
 
 save_figure(fig, 'FigureS11_model_extended')
-print("  FigureS11_model_extended saved.")
+print("  FigureS12_model_extended saved.")
 
 print("\n" + "=" * 60)
 print("Done!")

@@ -4,7 +4,7 @@ Supplementary Analysis: Hospital-Internal Lead-Time Metrics
   + FigureS9B extended threshold calibration
 
 Generates:
-  - FigureS9B_threshold_calibration (PNG/PDF/TIF)
+  - FigureS8B_threshold_calibration (PNG/PDF/TIF)
   - TableS5_threshold_performance.csv
   - leadtime_metrics.json
 
@@ -354,7 +354,7 @@ else:
 # ═══════════════════════════════════════════════════════════════
 # 8. Generate Figure: Threshold Calibration (2×2)
 # ═══════════════════════════════════════════════════════════════
-print("\n[6] Generating FigureS9B_threshold_calibration...")
+print("\n[6] Generating FigureS8B_threshold_calibration...")
 
 fig = plt.figure(figsize=(14, 10))
 gs = gridspec.GridSpec(2, 2, wspace=0.35, hspace=0.40,
@@ -438,8 +438,8 @@ ax_d.set_ylabel('Number of Months', fontsize=9)
 ax_d.set_title('Alert Composition by Threshold', fontsize=11)
 ax_d.legend(fontsize=7, framealpha=0.9)
 
-save_figure(fig, 'FigureS9B_threshold_calibration')
-print("  FigureS9B_threshold_calibration saved.")
+save_figure(fig, 'FigureS8B_threshold_calibration')
+print("  FigureS8B_threshold_calibration saved.")
 
 # ═══════════════════════════════════════════════════════════════
 # 9. Save results

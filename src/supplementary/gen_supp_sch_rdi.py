@@ -4,7 +4,7 @@ Supplementary Analysis: RDI Workflow Applied to SCH
   + Cross-center sentinel replication
 
 Generates:
-  - FigureS14_sch_rdi_workflow (PNG/PDF/TIF)
+  - FigureS13_sch_rdi_workflow (PNG/PDF/TIF)
   - sch_rdi_results.json
 
 Run: python gen_supp_sch_rdi.py
@@ -341,7 +341,7 @@ if len(df_quarterly) > 0:
 # ═══════════════════════════════════════════════════════════════
 # 8. Generate Figure S14: SCH RDI Workflow (2×2)
 # ═══════════════════════════════════════════════════════════════
-print("\n[8] Generating FigureS14_sch_rdi_workflow...")
+print("\n[8] Generating FigureS7_sch_rdi_workflow...")
 
 fig = plt.figure(figsize=(16, 12))
 gs = gridspec.GridSpec(2, 2, wspace=0.30, hspace=0.35,
@@ -469,8 +469,8 @@ else:
     ax_d.text(0.5, 0.5, 'Insufficient data', ha='center', va='center',
               transform=ax_d.transAxes, fontsize=12)
 
-save_figure(fig, 'FigureS14_sch_rdi_workflow')
-print("  FigureS14_sch_rdi_workflow saved.")
+save_figure(fig, 'FigureS2_sch_rdi_workflow')
+print("  FigureS7_sch_rdi_workflow saved.")
 
 # ═══════════════════════════════════════════════════════════════
 # 9. Save results

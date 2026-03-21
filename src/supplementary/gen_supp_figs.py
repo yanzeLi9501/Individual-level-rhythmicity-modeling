@@ -174,7 +174,7 @@ h2, l2 = ax_f2.get_legend_handles_labels()
 ax_f.legend(h1 + h2, l1 + l2, fontsize=6.5, loc='upper right')
 
 plt.tight_layout()
-save_figure(fig, 'FigureS1_data_overview')
+save_figure(fig, 'FigureS13_data_overview')
 
 # ════════════════════════════════════════════════════════════
 # S2: Comprehensive 13-Model Comparison (unchanged content)
@@ -218,9 +218,9 @@ if os.path.exists(comp_csv):
         ax.text(r2 + 0.01, i, f'$R^2$={r2:.3f}, MAE={mae:.2f}', va='center', fontsize=7)
 
     plt.tight_layout()
-    save_figure(fig, 'FigureS2_model_comparison')
+    save_figure(fig, 'FigureS7_model_comparison')
 else:
-    print("  WARNING: model_comparison_table.csv not found, skipping S2")
+    print("  WARNING: model_comparison_table.csv not found, skipping S8")
 
 # ════════════════════════════════════════════════════════════
 # S3: Learning Curves — 3 cohorts (WHU + SCH + MIMIC-IV)
@@ -411,7 +411,7 @@ for ci, (name, df, fcols, color) in enumerate(cohort_data):
     ax.legend(fontsize=7)
 
 plt.tight_layout()
-save_figure(fig, 'FigureS4_learning_curves')
+save_figure(fig, 'FigureS9_learning_curves')
 
 # ════════════════════════════════════════════════════════════
 # S4: Cross-Validation Fold-Level Performance (3 cohorts)
@@ -498,7 +498,7 @@ plot_fold_bars(axes[1, 1], sch_los_folds, 'LOS', 'SCH', COHORT_COLORS['SCH'], 'E
 plot_fold_bars(axes[1, 2], mimic_los_folds, 'LOS', 'MIMIC-IV', COHORT_COLORS['MIMIC-IV'], 'F')
 
 plt.tight_layout()
-save_figure(fig, 'FigureS5_fold_performance')
+save_figure(fig, 'FigureS10_fold_performance')
 
 # ════════════════════════════════════════════════════════════
 # S5: Stratified Subgroup Analysis (3 cohorts)
@@ -631,9 +631,9 @@ ax_d.set_ylabel('$R^2$')
 ax_d.set_title('WHU & SCH: Gap $R^2$ by Admission Year')
 
 plt.tight_layout()
-save_figure(fig, 'FigureS6_stratified_analysis')
+save_figure(fig, 'FigureS12_stratified_analysis')
 
 print("\n" + "=" * 60)
-print("All supplementary figures (S1-S2, S4-S6) complete!")
-print("(S3 = best_model_analysis, generated separately)")
+print("All supplementary figures (S1, S8-S11, S13) complete!")
+print("(S10 = best_model_analysis, generated separately)")
 print("=" * 60)

@@ -441,7 +441,7 @@ print("\n[5] Code & data availability documentation...")
 
 code_availability = {
     'repository': {
-        'url': '[To be filled: GitHub repository URL]',
+        'url': 'https://github.com/liyanze/Individual-level-rhythmicity-modeling',
         'doi': '[To be filled: Zenodo DOI after archiving]',
         'license': 'MIT License',
     },
@@ -489,28 +489,28 @@ print("\n[6] Generating completeness report...")
 
 # Check which supplementary figures/tables have been generated
 supp_items = {
-    'Figure S1': {'file': 'FigureS1_data_overview', 'status': 'unknown'},
-    'Figure S2': {'file': 'FigureS2_model_comparison', 'status': 'unknown'},
-    'Figure S3': {'file': 'FigureS3_best_model', 'status': 'unknown'},
-    'Figure S4': {'file': 'FigureS4_learning_curves', 'status': 'unknown'},
-    'Figure S5': {'file': 'FigureS5_cv_folds', 'status': 'unknown'},
-    'Figure S6': {'file': 'FigureS6_subgroup_analysis', 'status': 'unknown'},
-    'Figure S7': {'file': 'FigureS7_pandemic_impact', 'status': 'unknown'},
-    'Figure S8': {'file': 'FigureS8_permutation', 'status': 'unknown'},
-    'Figure S9': {'file': 'FigureS9B_threshold_calibration', 'status': 'unknown'},
-    'Figure S10': {'file': 'FigureS10_prospective_validation', 'status': 'unknown'},
+    'Figure S1': {'file': 'FigureS1_pandemic_impact_extended', 'status': 'unknown'},
+    'Figure S2': {'file': 'FigureS2_sch_rdi_workflow', 'status': 'unknown'},
+    'Figure S3': {'file': 'FigureS3_permutation_test', 'status': 'unknown'},
+    'Figure S4': {'file': 'FigureS4_dimension_ablation', 'status': 'unknown'},
+    'Figure S5': {'file': 'FigureS5_early_warning_extended', 'status': 'unknown'},
+    'Figure S6': {'file': 'FigureS6_postpandemic_extended', 'status': 'unknown'},
+    'Figure S7': {'file': 'FigureS7_model_comparison', 'status': 'unknown'},
+    'Figure S8': {'file': 'FigureS8_best_model_analysis', 'status': 'unknown'},
+    'Figure S9': {'file': 'FigureS9_learning_curves', 'status': 'unknown'},
+    'Figure S10': {'file': 'FigureS10_fold_performance', 'status': 'unknown'},
     'Figure S11': {'file': 'FigureS11_model_extended', 'status': 'unknown'},
-    'Figure S12': {'file': 'FigureS12_dimension_ablation', 'status': 'unknown'},
-    'Figure S13': {'file': 'FigureS13_augmented_sentinel', 'status': 'unknown'},
-    'Figure S14': {'file': 'FigureS14_sch_rdi_workflow', 'status': 'unknown'},
-    'Figure S15': {'file': 'FigureS15_extended_supp', 'status': 'unknown'},
+    'Figure S12': {'file': 'FigureS12_stratified_analysis', 'status': 'unknown'},
+    'Figure S13': {'file': 'FigureS13_data_overview', 'status': 'unknown'},
     'Table S1': {'file': 'feature_categories', 'status': 'in manuscript'},
     'Table S2': {'file': 'hyperparameters', 'status': 'in manuscript'},
     'Table S3': {'file': 'mimic_results', 'status': 'in manuscript'},
-    'Table S4': {'file': 'data_completeness', 'status': 'unknown'},
-    'Table S5': {'file': 'TableS5_threshold_performance', 'status': 'unknown'},
+    'Table S4': {'file': 'data_completeness', 'status': 'in manuscript'},
+    'Table S5': {'file': 'TableS5_threshold_performance', 'status': 'in manuscript'},
     'Table S6': {'file': 'TableS6_data_cleaning', 'status': 'unknown'},
     'Table S7': {'file': 'TableS7_code_availability', 'status': 'unknown'},
+    'Table S8': {'file': 'model_comparison', 'status': 'in manuscript'},
+    'Table S9': {'file': 'calibration', 'status': 'in manuscript'},
 }
 
 for item_name, info in supp_items.items():

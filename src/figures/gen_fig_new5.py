@@ -1,6 +1,6 @@
 """
 Figure 5: Model Generalizability (2×2 merged)
-  A) Gap scatter (actual vs predicted gap days)
+  A) Top-10 feature importance for gap prediction (horizontal bars)
   B) R² vs visit_order threshold (monotonic improvement)
   C) ML vs DL comparison across 3 cohorts (grouped bars)
   D) Comorbidity-stratified R² normalized ratio (WHU vs MIMIC)
@@ -90,21 +90,28 @@ def run_xgb(task, min_vo, cap, params):
     for j in range(X.shape[1]):
         mask = np.isnan(X[:, j]); X[mask, j] = col_m[j]
     kf = KFold(n_splits=5, shuffle=True, random_state=42)
-    all_true, all_pred, fold_metrics = [], [], []
+    all_true, all_pred, fold_metrics, fold_importances = [], [], [], []
     for tr, va in kf.split(X):
         m = xgb.XGBRegressor(**params, device='cuda', random_state=42, n_jobs=-1)
         m.fit(X[tr], y[tr], eval_set=[(X[va], y[va])], verbose=False)
         p = m.predict(X[va])
         all_true.extend(y[va]); all_pred.extend(p)
         fold_metrics.append({'r2': r2_score(y[va], p), 'mae': mean_absolute_error(y[va], p)})
-    return np.array(all_true), np.array(all_pred), fold_metrics
+        fold_importances.append(dict(zip(feat_cols, m.feature_importances_)))
+    return np.array(all_true), np.array(all_pred), fold_metrics, fold_importances
 
 # ── Panel A data: Gap predictions ──
 gap_params = results['gap']['params']
 los_params = results['los']['params']
 
 print("  Running Gap predictions...")
-g_true, g_pred, g_folds = run_xgb('target_gap_days', 20, 10, gap_params)
+g_true, g_pred, g_folds, g_imps = run_xgb('target_gap_days', 20, 10, gap_params)
+
+# Compute average feature importance across folds
+gap_imp_avg = {}
+for fc in feat_cols:
+    gap_imp_avg[fc] = np.mean([imp.get(fc, 0) for imp in g_imps])
+gap_top10 = sorted(gap_imp_avg.items(), key=lambda x: x[1], reverse=True)[:10]
 
 # ── Panel B data: R² vs visit_order sweep ──
 print("  Computing R² vs visit_order thresholds...")
@@ -173,21 +180,22 @@ print("  Generating Figure 5...")
 fig = plt.figure(figsize=(14, 10))
 gs = gridspec.GridSpec(2, 2, hspace=0.35, wspace=0.30)
 
-# ── Panel A: Gap scatter (actual vs predicted) ──
+# ── Panel A: Top-10 Feature Importance (Gap) ──
 ax = fig.add_subplot(gs[0, 0])
 panel_label(ax, 'A')
-ax.scatter(g_true, g_pred, alpha=0.5, s=20, c=COLORS['primary'],
-           edgecolors='white', linewidth=0.3)
-lims = [min(g_true.min(), g_pred.min()) - 0.5,
-        max(g_true.max(), g_pred.max()) + 0.5]
-ax.plot(lims, lims, '--', color=COLORS['secondary'], linewidth=1.5, alpha=0.8)
-ax.set_xlabel('Actual Gap Days')
-ax.set_ylabel('Predicted Gap Days')
-ax.set_title('Gap Days Prediction')
+g_names = [x[0] for x in gap_top10]
+g_vals = [x[1] for x in gap_top10]
+y_pos = np.arange(len(g_names))
+ax.barh(y_pos, g_vals, color=COLORS['primary'], alpha=0.85, edgecolor='white', height=0.7)
+ax.set_yticks(y_pos)
+ax.set_yticklabels([FEATURE_NAME_MAP.get(n, n.replace('_', ' ').title()) for n in g_names], fontsize=8)
+ax.invert_yaxis()
+ax.set_xlabel('Feature Importance (Gain)')
+ax.set_title('Top-10 Features — Gap Days')
 r2_g = r2_score(g_true, g_pred)
 mae_g = mean_absolute_error(g_true, g_pred)
-ax.text(0.05, 0.95, f'$R^2$={r2_g:.3f}\nMAE={mae_g:.3f}',
-        transform=ax.transAxes, va='top', fontsize=9,
+ax.text(0.95, 0.95, f'$R^2$={r2_g:.3f}\nMAE={mae_g:.3f}',
+        transform=ax.transAxes, va='top', ha='right', fontsize=9,
         bbox=dict(facecolor='white', alpha=0.8, edgecolor=COLORS['grid']))
 
 # ── Panel B: R² vs visit_order threshold ──

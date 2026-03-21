@@ -279,12 +279,13 @@ comor_colors = {
     'Renal': COLORS['accent5'],
 }
 
-fig = plt.figure(figsize=(18, 6))
-gs = gridspec.GridSpec(1, 2, wspace=0.30,
-                       left=0.06, right=0.96, top=0.92, bottom=0.12)
+fig = plt.figure(figsize=(16, 7))
+gs = gridspec.GridSpec(1, 2, wspace=0.35,
+                       left=0.07, right=0.96, top=0.92, bottom=0.14)
 
 # ─── Panel A: RDI timeline (left top) ────────────────────────
 ax_a = fig.add_subplot(gs[0, 0])
+ax_a.set_box_aspect(1)
 panel_label(ax_a, 'A')
 
 x_months = np.arange(len(monthly_results))
@@ -343,6 +344,7 @@ ax_a2.legend(loc='upper right', fontsize=6.5, framealpha=0.9)
 
 # ─── Panel B: Deviation heatmap ──────────────────────────────
 ax_b = fig.add_subplot(gs[0, 1])
+ax_b.set_box_aspect(1)
 panel_label(ax_b, 'B')
 
 dev_matrix = np.full((len(comorbidities), len(monthly_results)), np.nan)

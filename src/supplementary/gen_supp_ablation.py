@@ -193,7 +193,7 @@ for group_name, indices in [('Utilization only', list(range(5, 13))),
 # ═══════════════════════════════════════════════════════════════
 # 6. Generate Figure S12: Ablation Analysis (1×2)
 # ═══════════════════════════════════════════════════════════════
-print("\n[4] Generating FigureS12_dimension_ablation...")
+print("\n[4] Generating FigureS4_dimension_ablation...")
 
 fig = plt.figure(figsize=(16, 6))
 gs = gridspec.GridSpec(1, 2, wspace=0.35,
@@ -270,8 +270,8 @@ ax_b.axvspan(x[comorbidities.index('Respiratory')] - 0.45,
              x[comorbidities.index('Respiratory')] + 0.45,
              alpha=0.08, color=COLORS['secondary'])
 
-save_figure(fig, 'FigureS12_dimension_ablation')
-print("  FigureS12_dimension_ablation saved.")
+save_figure(fig, 'FigureS4_dimension_ablation')
+print("  FigureS4_dimension_ablation saved.")
 
 # ═══════════════════════════════════════════════════════════════
 # 7. Data Completeness Summary (Table S4)
