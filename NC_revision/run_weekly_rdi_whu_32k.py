@@ -21,7 +21,7 @@ import pandas as pd
 from scipy.spatial.distance import cosine
 
 BASE_DIR = Path(__file__).resolve().parent
-INPUT_TABLE = Path(r"data/readmission_output/all_admissions.csv")
+INPUT_TABLE = BASE_DIR.parent / "data" / "private" / "readmission_output" / "all_admissions.csv"
 OUT_DIR = BASE_DIR / "weekly_rdi_whu_32k_results"
 OUT_DIR.mkdir(exist_ok=True)
 

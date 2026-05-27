@@ -51,7 +51,7 @@ from sklearn.metrics import r2_score, mean_absolute_error
 warnings.filterwarnings("ignore")
 
 SUBMIT = Path(__file__).resolve().parents[3]
-MIMIC_HOSP = Path("data/mimic-iv-2.2/mimic-iv-2.2/hosp")
+MIMIC_HOSP = SUBMIT / "external_data/physionet/mimic-iv-2.2/mimic-iv-2.2/hosp"
 OUT = SUBMIT / "NC_revision/RebuildRevision/outputs/xgb_symmetric/feature_expansion"
 OUT.mkdir(parents=True, exist_ok=True)
 

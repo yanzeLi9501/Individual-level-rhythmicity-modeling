@@ -32,8 +32,8 @@ warnings.filterwarnings('ignore')
 
 # ── Paths ─────────────────────────────────────────────────────────────────────
 BASE         = os.path.dirname(os.path.abspath(__file__))
-DATA_CSV     = r'data\readmission_output\all_admissions.csv'
-COVID_CSV    = r'data\readmission_output\covid_test_results.csv'
+DATA_CSV     = os.path.join(os.path.dirname(BASE), 'data', 'private', 'readmission_output', 'all_admissions.csv')
+COVID_CSV    = os.path.join(os.path.dirname(BASE), 'data', 'private', 'readmission_output', 'covid_test_results.csv')
 OUT_DIR      = os.path.join(BASE, 'submit', 'figures')
 DEEP_OUT_DIR = os.path.join(BASE, 'DeepseekRevision', 'figures')
 os.makedirs(OUT_DIR, exist_ok=True)

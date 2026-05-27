@@ -18,9 +18,9 @@ import numpy as np
 
 
 BASE_DIR = Path(__file__).resolve().parent
-PROJECT_ROOT = Path(r"data/readmission_output/figures_v2/merge/Individual-level-rhythmicity-modeling")
-HEALTHLINE_ROOT = Path(r"data")
-READMISSION_ROOT = Path(r"data/readmission_output")
+PROJECT_ROOT = BASE_DIR.parent
+HEALTHLINE_ROOT = PROJECT_ROOT / "data" / "private" / "healthline"
+READMISSION_ROOT = HEALTHLINE_ROOT / "readmission_output"
 
 ORIGINAL_CONFIG = PROJECT_ROOT / "src" / "figures" / "fig_config.py"
 ORIGINAL_PROSPECTIVE_SCRIPT = PROJECT_ROOT / "src" / "supplementary" / "gen_supp_prospective_validation.py"

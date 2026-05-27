@@ -40,7 +40,7 @@ OUT_DIR = BASE / "cross_institution_lgdi_results"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # ── Paths ───────────────────────────────────────────────────────────────
-MIMIC_DIR = Path(r"data\mimic-iv-2.2\mimic-iv-2.2")
+MIMIC_DIR = BASE.parent / "external_data" / "physionet" / "mimic-iv-2.2" / "mimic-iv-2.2"
 NWICU_DIR = BASE.parent / "external_data" / "physionet" / "nwicu-northwestern-icu" / "0.1.0" / "data" / "nw_hosp"
 
 RANDOM_STATE = 20260516

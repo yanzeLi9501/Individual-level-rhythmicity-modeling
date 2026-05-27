@@ -67,7 +67,7 @@ warnings.filterwarnings("ignore")
 
 # ─── Paths ────────────────────────────────────────────────────────────────────
 SUBMIT = Path(__file__).resolve().parents[3] if "__file__" in dir() else Path(os.getcwd())
-MIMIC_HOSP = Path("data/mimic-iv-2.2/mimic-iv-2.2/hosp")
+MIMIC_HOSP = SUBMIT / "external_data/physionet/mimic-iv-2.2/mimic-iv-2.2/hosp"
 NWICU_HOSP = SUBMIT / "external_data/physionet/nwicu-northwestern-icu/0.1.0/data/nw_hosp"
 EICU_DIR   = SUBMIT / "external_data/physionet/eicu-crd/2.0"
 CDSL_DIR   = SUBMIT / "external_data/physionet/cdsl"

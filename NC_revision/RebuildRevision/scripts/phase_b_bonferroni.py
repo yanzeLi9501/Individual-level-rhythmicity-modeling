@@ -7,8 +7,9 @@ We do NOT overwrite the source file — derived copy in RebuildRevision per Prob
 import csv
 from pathlib import Path
 
-SRC = Path(r"data\readmission_output\figures_v2\merge\Submit\NC_revision\lgdi_results\lgdi_whu_influenza_lag_spearman.csv")
-DST = Path(r"data\readmission_output\figures_v2\merge\Submit\NC_revision\RebuildRevision\outputs\lgdi_whu_influenza_lag_spearman_bonferroni.csv")
+NC_DIR = Path(__file__).resolve().parents[2]
+SRC = NC_DIR / "lgdi_results" / "lgdi_whu_influenza_lag_spearman.csv"
+DST = NC_DIR / "RebuildRevision" / "outputs" / "lgdi_whu_influenza_lag_spearman_bonferroni.csv"
 DST.parent.mkdir(parents=True, exist_ok=True)
 
 K = 5   # number of lag tests (lag 0..4)

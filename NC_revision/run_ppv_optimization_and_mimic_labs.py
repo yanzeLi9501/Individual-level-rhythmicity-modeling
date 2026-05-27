@@ -23,7 +23,7 @@ OUT_DIR = BASE / "cross_institution_lgdi_results"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # ── Paths ───────────────────────────────────────────────────────────────
-MIMIC_HOSP = Path(r"data\mimic-iv-2.2\mimic-iv-2.2\hosp")
+MIMIC_HOSP = BASE.parent / "external_data" / "physionet" / "mimic-iv-2.2" / "mimic-iv-2.2" / "hosp"
 CARDIAC_LGDI = BASE / "lgdi_results" / "lgdi_rolling4_weekly.csv"
 CARDIAC_RDI = BASE / "weekly_rdi_42k_results" / "weekly_rdi_42k_rolling4_weekly.csv"
 CARDIAC_EXPANDED = BASE / "expanded_cardiac_wide_table.csv"

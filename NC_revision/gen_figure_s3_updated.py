@@ -29,7 +29,7 @@ if sys.stdout.encoding != 'utf-8':
 
 # ── Paths ─────────────────────────────────────────────────────────────────────
 BASE = os.path.dirname(os.path.abspath(__file__))
-DATA_CSV   = r'data\readmission_output\all_admissions.csv'
+DATA_CSV   = os.path.join(os.path.dirname(BASE), 'data', 'private', 'readmission_output', 'all_admissions.csv')
 CARMEN_JSON = os.path.join(BASE, 'external_positive_control_results', 'carmen_i_cardiac_summary.json')
 WHU_JSON    = os.path.join(BASE, 'external_positive_control_results', 'whu_covid_cardiac_summary.json')
 OUT_DIR      = os.path.join(BASE, 'submit', 'figures')

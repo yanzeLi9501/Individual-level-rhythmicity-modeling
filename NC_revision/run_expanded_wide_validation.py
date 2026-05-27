@@ -11,7 +11,7 @@ from pathlib import Path
 
 
 BASE_DIR = Path(__file__).resolve().parent
-PROJECT_ROOT = Path(r"data/readmission_output/figures_v2/merge/Individual-level-rhythmicity-modeling")
+PROJECT_ROOT = BASE_DIR.parent
 ORIGINAL_CONFIG = PROJECT_ROOT / "src" / "figures" / "fig_config.py"
 ORIGINAL_PROSPECTIVE_SCRIPT = PROJECT_ROOT / "src" / "supplementary" / "gen_supp_prospective_validation.py"
 

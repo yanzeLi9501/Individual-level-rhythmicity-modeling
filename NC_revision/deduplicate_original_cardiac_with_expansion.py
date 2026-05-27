@@ -3,7 +3,6 @@ from __future__ import annotations
 import csv
 import hashlib
 import json
-import os
 import sys
 from collections import Counter, defaultdict
 from datetime import datetime
@@ -14,10 +13,7 @@ import build_expanded_cardiac_cohort as audit
 
 BASE_DIR = Path(__file__).resolve().parent
 ORIGINAL_CARDIAC_CSV = Path(
-    os.environ.get(
-        "ORIGINAL_CARDIAC_CSV",
-        "data/private/original_cardiac/final_preprocessed_data_new.csv",
-    )
+    BASE_DIR.parent / "data" / "private" / "original_cardiac" / "final_preprocessed_data_new.csv"
 )
 OUTPUT_PREFIX = "cardiac_original_expanded_dedup"
 HASH_SALT = "NC_revision_original_expanded_dedup_2026_05"

@@ -25,7 +25,7 @@ SUBMIT_DIR = BASE_DIR.parent
 OUT_DIR = BASE_DIR / "external_positive_control_results"
 CACHE_DIR = OUT_DIR / "cache"
 
-MIMIC_ROOT = Path(r"data\mimic-iv-2.2\mimic-iv-2.2")
+MIMIC_ROOT = SUBMIT_DIR / "external_data" / "physionet" / "mimic-iv-2.2" / "mimic-iv-2.2"
 EICU_ROOT = SUBMIT_DIR / "external_data" / "physionet" / "eicu-crd" / "2.0"
 NWICU_ROOT = SUBMIT_DIR / "external_data" / "physionet" / "nwicu-northwestern-icu" / "0.1.0"
 MIMIC_ED_ROOT = SUBMIT_DIR / "external_data" / "physionet" / "mimic-iv-ed" / "2.2"

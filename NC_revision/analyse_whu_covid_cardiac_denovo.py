@@ -37,7 +37,7 @@ import numpy as np
 import pandas as pd
 
 # ── Paths ─────────────────────────────────────────────────────────────────────
-BASE = Path(r"data\readmission_output\figures_v2\merge\Submit")
+BASE = Path(__file__).resolve().parent.parent
 CARDIAC_WIDE_TABLE = BASE / "NC_revision" / "expanded_cardiac_wide_table.csv"
 CARMEN_JSON = BASE / "NC_revision" / "external_positive_control_results" / "carmen_i_cardiac_summary.json"
 OUT_DIR = BASE / "NC_revision" / "external_positive_control_results"

@@ -44,7 +44,7 @@ BASE = Path(__file__).resolve().parent
 SUBMIT = BASE.parent
 LGDI_DIR = BASE / "lgdi_results"
 PKG_FIG = BASE / "resubmission_package_20260512" / "figures"
-WHU_RAW = Path(r"data\readmission_output\all_admissions.csv")
+WHU_RAW = SUBMIT / "data" / "private" / "readmission_output" / "all_admissions.csv"
 
 GROUPS = ["Cardiovascular", "Hypertension", "Diabetes", "Cerebrovascular", "Renal", "Respiratory"]
 MONITOR_START = pd.Timestamp("2019-01-01")

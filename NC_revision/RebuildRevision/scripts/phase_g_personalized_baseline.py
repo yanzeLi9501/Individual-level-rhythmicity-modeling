@@ -27,10 +27,10 @@ from sklearn.model_selection import GroupKFold
 from sklearn.metrics import r2_score, mean_absolute_error
 warnings.filterwarnings("ignore")
 
-SUBMIT = Path(r"data\readmission_output\figures_v2\merge\Submit")
-WHU_JSON_DIR = Path(r"data")
+SUBMIT = Path(__file__).resolve().parents[3]
+WHU_JSON_DIR = SUBMIT / "data" / "private" / "healthline"
 CARDIAC_CSV = SUBMIT / "NC_revision/expanded_cardiac_wide_table.csv"
-MIMIC_HOSP = Path("data/mimic-iv-2.2/mimic-iv-2.2/hosp")
+MIMIC_HOSP = SUBMIT / "external_data/physionet/mimic-iv-2.2/mimic-iv-2.2/hosp"
 NWICU_HOSP = SUBMIT / "external_data/physionet/nwicu-northwestern-icu/0.1.0/data/nw_hosp"
 EICU_DIR = SUBMIT / "external_data/physionet/eicu-crd/2.0"
 OUT = SUBMIT / "NC_revision/RebuildRevision/outputs/xgb_symmetric/personalized_baseline"

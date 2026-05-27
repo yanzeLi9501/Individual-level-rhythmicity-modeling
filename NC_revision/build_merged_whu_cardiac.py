@@ -13,7 +13,7 @@ import pandas as pd
 
 
 BASE_DIR = Path(__file__).resolve().parent
-WHU_TABLE = Path(r"data/readmission_output/all_admissions.csv")
+WHU_TABLE = BASE_DIR.parent / "data" / "private" / "readmission_output" / "all_admissions.csv"
 CARDIAC_TABLE = BASE_DIR / "expanded_cardiac_wide_table.csv"
 OUTPUT_TABLE = BASE_DIR / "merged_whu_cardiac_51k.csv"
 SUMMARY_JSON = BASE_DIR / "merged_whu_cardiac_51k_summary.json"

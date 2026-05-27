@@ -13,7 +13,7 @@ import pandas as pd
 BASE_DIR = Path(__file__).resolve().parent
 SCHEMA_PATH = BASE_DIR / "expanded_cardiac_table_schema.csv"
 ORIGINAL_WIDE_PATH = Path(
-    r"data\readmission_output\figures_v2\merge\final_preprocessed_data_new.csv"
+    BASE_DIR.parent / "data" / "private" / "final_preprocessed_data_new.csv"
 )
 
 EXPANDED_WIDE_PATH = BASE_DIR / "expanded_cardiac_wide_table.csv"

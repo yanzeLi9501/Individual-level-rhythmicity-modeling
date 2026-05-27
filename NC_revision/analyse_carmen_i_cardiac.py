@@ -22,7 +22,7 @@ from collections import defaultdict
 from pathlib import Path
 
 # ── Paths ────────────────────────────────────────────────────────────────────
-BASE = Path(r"data\readmission_output\figures_v2\merge\Submit")
+BASE = Path(__file__).resolve().parent.parent
 NER_TSV = BASE / "external_data/physionet/carmen-i/1.0.1/CARMEN-I/tsv/masked/CARMEN-I_masked_ner.tsv"
 OUT_DIR = BASE / "NC_revision/external_positive_control_results"
 OUT_DIR.mkdir(parents=True, exist_ok=True)

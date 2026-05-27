@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import json
-import os
 import re
 from pathlib import Path
 
@@ -12,18 +11,8 @@ ROOT = Path(__file__).resolve().parent
 NC_ROOT = ROOT.parent
 OUTPUT = ROOT / "analysis_outputs"
 
-COHORT = Path(
-    os.environ.get(
-        "WHU_PRIMARY_COHORT_CSV",
-        NC_ROOT / "data" / "private" / "whu_primary_for_lgdi.csv",
-    )
-)
-DIAGNOSIS = Path(
-    os.environ.get(
-        "WHU_DIAGNOSIS_CSV",
-        NC_ROOT / "data" / "private" / "diagnosis.csv",
-    )
-)
+COHORT = NC_ROOT / "data" / "private" / "whu_primary_for_lgdi.csv"
+DIAGNOSIS = NC_ROOT / "data" / "private" / "diagnosis.csv"
 
 
 def normalize_mrn(value: object) -> str | None:

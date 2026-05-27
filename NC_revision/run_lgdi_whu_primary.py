@@ -24,7 +24,7 @@ sys.path.insert(0, str(BASE))
 
 from run_lgdi_surveillance import run_analysis, BASE_DIR  # type: ignore  # noqa: E402
 
-WHU_RAW = Path(r"data\readmission_output\all_admissions.csv")
+WHU_RAW = BASE.parent / "data" / "private" / "readmission_output" / "all_admissions.csv"
 ADAPTED = BASE / "_tmp_whu_primary_for_lgdi.csv"
 
 

@@ -18,7 +18,7 @@ from sklearn.model_selection import KFold
 
 
 BASE_DIR = Path(__file__).resolve().parent
-READMISSION_DIR = Path(r"data/readmission_output")
+READMISSION_DIR = BASE_DIR.parent / "data" / "private" / "readmission_output"
 HISTORY_FEATURES_CSV = READMISSION_DIR / "history_model" / "history_features.csv"
 TRAIN_CSV = READMISSION_DIR / "train_data.csv"
 BROAD_RESULTS_JSON = READMISSION_DIR / "broad_config_results.json"
